@@ -1,0 +1,135 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Kobujoi CDF System (Windows)",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"--prefix",
+				"KOBUJOI-CDF-STYSTEM-main",
+				"run",
+				"dev"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Check repository root",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/c",
+				"git -C KOBUJOI-CDF-STYSTEM-main rev-parse --show-toplevel && git -C KOBUJOI-CDF-STYSTEM-main status --short"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check outer repository root",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/c",
+				"git rev-parse --show-toplevel"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate standard npm dependency install",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"install",
+				"--prefix",
+				"KOBUJOI-CDF-STYSTEM-main",
+				"--no-audit",
+				"--no-fund"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify production build after install fix",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"--prefix",
+				"KOBUJOI-CDF-STYSTEM-main",
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify TypeScript after install fix",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"--prefix",
+				"KOBUJOI-CDF-STYSTEM-main",
+				"run",
+				"lint"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Test Render clean install command",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"ci",
+				"--prefix",
+				"KOBUJOI-CDF-STYSTEM-main",
+				"--no-audit",
+				"--no-fund"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Restore dependencies with npm install",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"install",
+				"--prefix",
+				"KOBUJOI-CDF-STYSTEM-main",
+				"--no-audit",
+				"--no-fund"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Final build after dependency restore",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"--prefix",
+				"KOBUJOI-CDF-STYSTEM-main",
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Final typecheck after dependency restore",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"--prefix",
+				"KOBUJOI-CDF-STYSTEM-main",
+				"run",
+				"lint"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: kobujoi-cdf-system
+    runtime: node
+    plan: free
+    rootDir: .
+    buildCommand: npm install --no-audit --no-fund && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 22.14.0
